@@ -8,6 +8,14 @@ from langgraph.graph.message import add_messages
 from config import DEEPSEEK_MODEL, DEEPSEEK_API_KEY
 from tools import TOOLS
 
+
+'''
+1. State      — 图的共享数据（消息列表）
+2. agent node — 调 LLM，返回 AIMessage
+3. tools node — 执行 tool_calls，返回 ToolMessage 列表
+4. 路由      — 检查最后一条消息有没有 tool_calls，决定继续还是结束
+'''
+
 # --- 1. 定义 State ---图的共享数据，消息列表
 class State(TypedDict):
     messages:Annotated[list,add_messages]
