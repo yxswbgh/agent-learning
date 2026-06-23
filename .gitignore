@@ -12,3 +12,7 @@ wheels/
 .env
 
 docs
+
+output
+
+chroma_data
