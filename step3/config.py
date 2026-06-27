@@ -13,7 +13,7 @@ load_dotenv(dotenv_path=env_path)
 DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY")
 TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")
 LANGSMITH_API_KEY = os.getenv("LANGSMITH_API_KEY")
-ZHIPU_API_KEY=os.getenv("ZHIPU_API_KEY")
+EMBEDDING_API_KEY=os.getenv("EMBEDDING_API_KEY")
 
 # --- 3. 常量 ---
 DEEPSEEK_MODEL = "deepseek-chat"
@@ -39,6 +39,6 @@ else:
 
 
 # --- 6. 记忆系统常量 ---
-EMBEDDING_MODEL = "embedding-3"
-
+EMBEDDING_MODEL = "text-embedding-3-large"
+EMBEDDING_BASE_URL="https://nangeai.top/v1"
 CHROMA_DIR = str(Path(__file__).parent / "chroma_data")
